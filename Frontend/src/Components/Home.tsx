@@ -1,10 +1,10 @@
 import axios from "axios";
 import Header from "../Components/Header";
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
+import AboutUsComponent from "./AboutUsComponent";
 
 const Home = () => {
-  const Title = "Diet Tracker";
-
   const [data, setData] = useState("");
 
   useEffect(() => {
@@ -19,13 +19,14 @@ const Home = () => {
         <Header />
       </div>
       <div>
-        <h2 className="text-2xl mt-40 font-bold text-center text-white">
-          Welcome to {Title}
-        </h2>
-        <h2 className="text-xl font-bold text-center tracking-wider font-sans">
+        <h2 className="text-xl relative top-55 font-bold text-center tracking-wider font-sans">
           Welcome To {data}
         </h2>
+
+        <AboutUsComponent />
       </div>
+
+      <Footer />
     </>
   );
 };
