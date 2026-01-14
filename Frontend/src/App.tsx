@@ -1,7 +1,4 @@
-// "use client";
-
 import axios from "axios";
-// import DataFetched from "./Components/DataFetched";
 import Header from "./Components/Header";
 import { useEffect, useState } from "react";
 
