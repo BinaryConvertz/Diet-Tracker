@@ -26,8 +26,8 @@ const Header = () => {
                 Dashboard
               </a>
 
-              <a href="/weight" className="text-lg text-white p-3">
-                Weight Tracker
+              <a href="/About" className="text-lg text-white p-3">
+                About Us
               </a>
             </li>
           </ul>
