@@ -9,7 +9,7 @@ function setup() {
   app.use(cors());
 
   app.get("/", (req, res) => {
-    res.send("Hello World");
+    res.send("Diet Tracker");
   });
 
   app.listen(3000, () => {

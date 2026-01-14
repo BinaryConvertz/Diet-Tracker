@@ -22,7 +22,9 @@ const App = () => {
         <h2 className="text-2xl mt-40 font-bold text-center text-white">
           Welcome to {Title}
         </h2>
-        <h2>{data}</h2>
+        <h2 className="text-xl font-bold text-center tracking-wider font-sans">
+          Welcome To {data}
+        </h2>
       </div>
     </>
   );

@@ -1,0 +1,25 @@
+header li a:hover {
+  border-bottom: 1px solid #fff;
+}
+
+@media screen and (max-width: 768px) {
+  header li a {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header li a {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
