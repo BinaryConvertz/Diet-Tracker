@@ -1,12 +1,34 @@
+// "use client";
+
+import axios from "axios";
+// import DataFetched from "./Components/DataFetched";
+import Header from "./Components/Header";
+import { useEffect, useState } from "react";
+
 const App = () => {
+  const Title = "Diet Tracker";
 
+  const [data, setData] = useState("");
 
-    return (
-        <div>
-            <h2>Hello</h2>
-        </div>
-    )
+  useEffect(() => {
+    axios.get("http://localhost:3000/").then((e) => {
+      setData(e.data);
+    });
+  });
 
-}
+  return (
+    <>
+      <div>
+        <Header />
+      </div>
+      <div>
+        <h2 className="text-2xl mt-40 font-bold text-center text-white">
+          Welcome to {Title}
+        </h2>
+        <h2>{data}</h2>
+      </div>
+    </>
+  );
+};
 
 export default App;

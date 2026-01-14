@@ -1,22 +1,20 @@
 import express from "express";
+import cors from "cors";
 
 type Route = string;
 type PORT = number;
 
-export namespace Server {
-  export function setup(route: Route, serverPort: PORT) {
-    const app = express();
+function setup() {
+  const app = express();
+  app.use(cors());
 
-    app.get(route, (req, res) => {
-      res.send("Hello World");
-    });
+  app.get("/", (req, res) => {
+    res.send("Hello World");
+  });
 
-    app.listen(serverPort, () => {
-      console.log(`Server Running at: http://localhost:${serverPort} `);
-    });
-  }
-
-  export function getServerUp() {
-    Server.setup("/", 3000);
-  }
+  app.listen(3000, () => {
+    console.log(`Server Running at: http://localhost:${3000} `);
+  });
 }
+
+setup();

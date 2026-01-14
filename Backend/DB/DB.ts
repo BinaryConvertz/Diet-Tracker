@@ -1,5 +1,4 @@
 import { MongoClient } from "mongodb";
-import { Server } from "../Server/Server";
 
 type URI = string;
 type Data = string;
@@ -10,14 +9,16 @@ namespace Client {
   }
 
   export async function getClientOnline(dataUser: Data) {
-    const m = new MongoClient(Client.getURI("mongodb://localhost:27017"));
-    await m.connect();
-    console.log("Connected to MongoDB");
+    try {
+      const m = new MongoClient(Client.getURI("mongodb://localhost:27017"));
+      await m.connect();
+      console.log("Connected to MongoDB");
 
-    const db = m.db("InputByUser");
-    const coll = db.collection("value");
-    await coll.insertOne({ data: dataUser });
+      const db = m.db("InputByUser");
+      const coll = db.collection("value");
+      await coll.insertOne({ data: dataUser });
+    } catch (e) {
+      console.log(e);
+    }
   }
-
-  Server.getServerUp();
 }
