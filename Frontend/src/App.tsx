@@ -1,4 +1,4 @@
-import Links from "./Components/Links";
+import Links from "./Routing/Links";
 
 const App = () => {
   return (

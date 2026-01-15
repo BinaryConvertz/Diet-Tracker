@@ -1,5 +1,5 @@
 import axios from "axios";
-import Header from "../Components/Header";
+import Header from "./Header";
 import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import AboutUsComponent from "./AboutUsComponent";
